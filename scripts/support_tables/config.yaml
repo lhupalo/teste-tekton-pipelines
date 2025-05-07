@@ -1,0 +1,21 @@
+type: project
+project_name: ds-teste-esteira
+dag_name: TESTE_ESTEIRA_DAG2_7
+owner: teste@teste.com
+start_date: '2023-08-08'
+catchup: False
+source: True
+
+tasks:
+  support_tables_update:
+    databricks_file: runner
+    cluster_config:
+      spark_version: '12.2.x-cpu-ml-scala2.12'
+    custom_tags:
+      Project: credit-pj-eligibility
+      ProcessType: Others
+      bu: financial_services_pj
+      data_domain: credit_pj
+    libraries:
+      - pypi:
+          package: owl_data_access==3.*
